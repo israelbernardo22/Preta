@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Micotoxinas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            padding: 15px;
+        }
+
+        .banner {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1b4d1e 0%, #2c5f2d 50%, #97c27c 100%);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 25px;
+            border-bottom: 4px solid #fff;
+            padding-bottom: 18px;
+            background: rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 15px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .content {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 25px;
+            margin-bottom: 25px;
+            align-items: center;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            color: #1b4d1e;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-left: 5px solid #97c27c;
+            padding-left: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section p {
+            color: #333;
+            line-height: 1.8;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 15px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 5px solid #2c5f2d;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: #1b4d1e;
+            font-size: 17px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .image-container {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin: 15px 0;
+        }
+
+        .image-box {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .image-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .image-box svg {
+            width: 90px;
+            height: 90px;
+            margin-bottom: 10px;
+        }
+
+        .image-box p {
+            font-size: 13px;
+            color: #1b4d1e;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .flowchart {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 3px solid #2c5f2d;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .flowchart h3 {
+            color: #1b4d1e;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .flow-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .flow-box {
+            background: white;
+            padding: 18px 22px;
+            border-radius: 10px;
+            border: 3px solid #2c5f2d;
+            min-width: 160px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            flex: 1;
+            min-height: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .flow-box.danger {
+            border-color: #dc3545;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+        }
+
+        .flow-box.warning {
+            border-color: #ffc107;
+            background: linear-gradient(135deg, #fffef5 0%, #fff9e6 100%);
+        }
+
+        .flow-box h4 {
+            font-size: 15px;
+            color: #1b4d1e;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .flow-box p {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .arrow {
+            font-size: 28px;
+            color: #2c5f2d;
+            font-weight: bold;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-top: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        th {
+            background: linear-gradient(135deg, #1b4d1e 0%, #2c5f2d 100%);
+            color: white;
+            padding: 14px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        tr:hover {
+            background: #e8f5e9;
+        }
+
+        .footer {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 3px solid #2c5f2d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .author {
+            color: #1b4d1e;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .institution {
+            color: #666;
+            font-size: 13px;
+            margin-top: 3px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffe8a1 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #ffc107;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .highlight h3 {
+            color: #856404;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .highlight p {
+            color: #856404;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 15px;
+        }
+
+        .control-item {
+            text-align: center;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-top: 4px solid #4CAF50;
+        }
+
+        .control-item svg {
+            width: 65px;
+            height: 65px;
+            margin-bottom: 8px;
+        }
+
+        .control-item p {
+            font-size: 12px;
+            color: #1b4d1e;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        .impact-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            padding: 18px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border: 3px solid #dc3545;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .impact-box strong {
+            color: #c62828;
+            font-size: 16px;
+        }
+
+        .impact-box span {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .objetivo-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 5px solid #2196F3;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .objetivo-box h3 {
+            color: #0d47a1;
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .objetivo-box p {
+            color: #1565c0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+            .banner {
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .flow-container {
+                flex-direction: column;
+            }
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="header">
+            <h1>Micotoxinas em Silagem de Milho Associadas à Necrose Hepática Multifocal em Bovinos Leiteiros</h1>
+            <p>XVI Colóquio Técnico Científico de Saúde Única, Ciências Agrárias e Meio Ambiente</p>
+        </div>
+
+        <div class="content">
+            <div class="two-column">
+                <div class="section">
+                    <h2>📋 Introdução</h2>
+                    <p>A presença de fungos toxigênicos na silagem de milho representa um importante desafio para a pecuária leiteira. Fungos dos gêneros <strong>Aspergillus, Fusarium e Penicillium</strong> produzem micotoxinas como aflatoxinas, fumonisinas e zearalenona, reconhecidas por seus efeitos hepatotóxicos, imunossupressores e carcinogênicos. A exposição compromete a saúde animal, a produtividade e a segurança alimentar.</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=300&fit=crop" 
+                         alt="Silagem de Milho" 
+                         style="width: 100%; max-width: 280px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                    <p style="margin-top: 10px; font-size: 14px; color: #1b4d1e; font-weight: bold;">Silagem de Milho</p>
+                </div>
+            </div>
+
+            <div class="objetivo-box">
+                <h3>🎯 Objetivo do Estudo</h3>
+                <p>Revisar a literatura científica sobre a ocorrência de micotoxinas em silagem de milho e sua relação com a necrose hepática multifocal em bovinos leiteiros, no contexto da Saúde Única.</p>
+            </div>
+
+            <div class="section">
+                <h2>🔬 Principais Fungos Toxigênicos</h2>
+                <div class="image-grid">
+                    <div class="image-box">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="30" fill="#4a5568" opacity="0.2"/>
+                            <circle cx="50" cy="35" r="15" fill="#2d3748"/>
+                            <circle cx="40" cy="50" r="10" fill="#2d3748"/>
+                            <circle cx="60" cy="50" r="10" fill="#2d3748"/>
+                            <circle cx="50" cy="65" r="12" fill="#2d3748"/>
+                            <line x1="50" y1="20" x2="50" y2="5" stroke="#2d3748" stroke-width="3"/>
+                            <line x1="30" y1="30" x2="20" y2="20" stroke="#2d3748" stroke-width="3"/>
+                            <line x1="70" y1="30" x2="80" y2="20" stroke="#2d3748" stroke-width="3"/>
+                            <circle cx="50" cy="35" r="3" fill="#fff" opacity="0.5"/>
+                        </svg>
+                        <p>Aspergillus<br><span style="font-size: 11px; font-weight: normal; color: #666;">Produz aflatoxinas</span></p>
+                    </div>
+                    <div class="image-box">
+                        <svg viewBox="0 0 100 100">
+                            <ellipse cx="50" cy="50" rx="35" ry="20" fill="#8b4513" opacity="0.2"/>
+                            <path d="M 30 50 Q 40 30 50 50 T 70 50" fill="none" stroke="#654321" stroke-width="4"/>
+                            <circle cx="35" cy="45" r="5" fill="#654321"/>
+                            <circle cx="50" cy="35" r="6" fill="#654321"/>
+                            <circle cx="65" cy="45" r="5" fill="#654321"/>
+                            <line x1="35" y1="50" x2="35" y2="65" stroke="#654321" stroke-width="2"/>
+                            <line x1="50" y1="50" x2="50" y2="70" stroke="#654321" stroke-width="2"/>
+                            <line x1="65" y1="50" x2="65" y2="65" stroke="#654321" stroke-width="2"/>
+                            <circle cx="50" cy="35" r="2" fill="#fff" opacity="0.6"/>
+                        </svg>
+                        <p>Fusarium<br><span style="font-size: 11px; font-weight: normal; color: #666;">Produz fumonisinas</span></p>
+                    </div>
+                    <div class="image-box">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="30" fill="#2c5f2d" opacity="0.2"/>
+                            <circle cx="50" cy="40" r="12" fill="#1a3d1a"/>
+                            <circle cx="35" cy="55" r="10" fill="#1a3d1a"/>
+                            <circle cx="65" cy="55" r="10" fill="#1a3d1a"/>
+                            <circle cx="50" cy="65" r="8" fill="#1a3d1a"/>
+                            <line x1="50" y1="28" x2="50" y2="15" stroke="#1a3d1a" stroke-width="2"/>
+                            <line x1="25" y1="50" x2="15" y2="45" stroke="#1a3d1a" stroke-width="2"/>
+                            <line x1="75" y1="50" x2="85" y2="45" stroke="#1a3d1a" stroke-width="2"/>
+                            <circle cx="50" cy="40" r="3" fill="#fff" opacity="0.5"/>
+                        </svg>
+                        <p>Penicillium<br><span style="font-size: 11px; font-weight: normal; color: #666;">Produz múltiplas toxinas</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flowchart">
+                <h3>🔄 Fluxograma: Da Contaminação à Lesão Hepática</h3>
+                <div class="flow-container">
+                    <div class="flow-box">
+                        <h4>1️⃣ Crescimento Fúngico</h4>
+                        <p>Condições favoráveis: umidade e temperatura elevadas</p>
+                    </div>
+                    <span class="arrow">→</span>
+                    <div class="flow-box warning">
+                        <h4>2️⃣ Produção de Micotoxinas</h4>
+                        <p>Aflatoxinas, fumonisinas, zearalenona</p>
+                    </div>
+                    <span class="arrow">→</span>
+                    <div class="flow-box">
+                        <h4>3️⃣ Ingestão</h4>
+                        <p>Consumo contínuo de silagem contaminada</p>
+                    </div>
+                    <span class="arrow">→</span>
+                    <div class="flow-box warning">
+                        <h4>4️⃣ Metabolismo Hepático</h4>
+                        <p>Biotransformação e acúmulo de toxinas</p>
+                    </div>
+                    <span class="arrow">→</span>
+                    <div class="flow-box danger">
+                        <h4>5️⃣ Lesão Hepática</h4>
+                        <p>Necrose multifocal centrolobular</p>
+                    </div>
+                </div>
+                <div class="impact-box">
+                    <strong>⚠️ Consequências:</strong><br>
+                    <span>Redução da produção leiteira • Estresse oxidativo • Imunossupressão • Contaminação do leite (AFM1) • Prejuízo econômico</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🧪 Principais Micotoxinas e Efeitos</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Aflatoxina B1</h3>
+                        <p>Alta toxicidade hepática. Biotransformada em aflatoxina M1, é excretada no leite, representando grave risco à saúde pública e qualidade dos produtos lácteos.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Fumonisinas</h3>
+                        <p>Causam lesões hepáticas multifocais graves, alterações metabólicas significativas e distúrbios no metabolismo lipídico dos animais.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Zearalenona</h3>
+                        <p>Potentes efeitos imunossupressores e interferência no sistema reprodutivo, comprometendo fertilidade e desempenho reprodutivo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <svg viewBox="0 0 100 100" style="width: 90px; height: 90px; flex-shrink: 0;">
+                        <ellipse cx="50" cy="55" rx="35" ry="30" fill="#8B4513" opacity="0.7"/>
+                        <ellipse cx="35" cy="50" rx="20" ry="25" fill="#A0522D"/>
+                        <ellipse cx="65" cy="50" rx="15" ry="20" fill="#A0522D"/>
+                        <circle cx="40" cy="45" r="4" fill="#dc3545"/>
+                        <circle cx="55" cy="50" r="3" fill="#dc3545"/>
+                        <circle cx="48" cy="60" r="3.5" fill="#dc3545"/>
+                        <circle cx="62" cy="55" r="3" fill="#dc3545"/>
+                        <circle cx="35" cy="55" r="2.5" fill="#dc3545"/>
+                        <path d="M 30 70 Q 50 75 70 70" stroke="#654321" stroke-width="2" fill="none"/>
+                    </svg>
+                    <div>
+                        <h3>🔴 Impactos Hepatológicos</h3>
+                        <p>A exposição prolongada está associada à <strong>necrose hepática multifocal de padrão centrolobular</strong>, caracterizada por degeneração hepatocelular, congestão e infiltrado inflamatório discreto. Os mecanismos patogênicos incluem estresse oxidativo intenso e inibição da síntese proteica celular.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📍 Distribuição Regional no Brasil</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 15%;">Estado</th>
+                                <th style="width: 25%;">Micotoxinas Principais</th>
+                                <th style="width: 60%;">Efeitos Relatados</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>São Paulo</strong></td>
+                                <td>Aflatoxina B1</td>
+                                <td>Redução significativa da produção leiteira, estresse oxidativo intenso e risco elevado de lesões hepáticas centrolobulares</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Minas Gerais</strong></td>
+                                <td>Fumonisinas</td>
+                                <td>Lesões hepáticas multifocais severas, alterações metabólicas complexas e distúrbios importantes no metabolismo lipídico</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Goiás</strong></td>
+                                <td>Aflatoxina B1</td>
+                                <td>Alterações ruminais significativas, necrose hepática multifocal progressiva e prejuízo acentuado no metabolismo energético</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="margin-top: 12px; font-size: 13px; color: #666; font-style: italic;">
+                    * Regiões de clima quente e úmido apresentam maior incidência devido às condições favoráveis ao crescimento fúngico.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>🛡️ Estratégias de Controle e Prevenção</h2>
+                <div class="controls-grid">
+                    <div class="control-item">
+                        <svg viewBox="0 0 80 80">
+                            <circle cx="40" cy="40" r="23" fill="none" stroke="#4CAF50" stroke-width="3"/>
+                            <path d="M 28 40 L 36 48 L 54 30" fill="none" stroke="#4CAF50" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="40" cy="20" r="4" fill="#4CAF50"/>
+                            <circle cx="40" cy="60" r="4" fill="#4CAF50"/>
+                        </svg>
+                        <p>Diagnóstico Precoce</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💡 Considerações Finais</h2>
+                <p>A contaminação por micotoxinas na silagem de milho representa um <strong>desafio contínuo e multifacetado</strong> para a pecuária leiteira, com impactos diretos e significativos sobre a saúde hepática e a produtividade dos bovinos. O controle eficaz requer uma <strong>abordagem integrada</strong> que combine boas práticas agrícolas, monitoramento rigoroso e uso criterioso de adsorventes. A prevenção dessas contaminações é <strong>essencial</strong> para reduzir perdas produtivas e proteger a saúde pública, reforçando a importância da vigilância sanitária dentro do conceito de <strong>Saúde Única</strong>.</p>
+                
+                <div style="margin-top: 15px; padding: 15px; background: #e3f2fd; border-radius: 8px; border-left: 4px solid #2196F3;">
+                    <p style="margin: 0; color: #0d47a1; font-size: 13px;">
+                        <strong>🔬 Perspectivas Futuras:</strong> Estudos devem avaliar a eficácia comparativa dos adsorventes e os efeitos cumulativos das micotoxinas no fígado, fortalecendo estratégias preventivas baseadas em evidências.
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div>
+                    <div class="author">Maria Clara De Assis Ferreira</div>
+                    <div class="institution">Discente do Curso de Medicina Veterinária</div>
+                    <div class="institution">Centro Universitário UNA - Belo Horizonte</div>
+                </div>
+                <div style="text-align: right;">
+                    <div class="institution" style="font-weight: 600; color: #2c5f2d;">📧 Contato:</div>
+                    <div class="institution">mariahckara@gmail.com</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html">
+                        <svg viewBox="0 0 80 80">
+                            <rect x="20" y="30" width="40" height="35" fill="#4CAF50" rx="3"/>
+                            <rect x="25" y="35" width="30" height="5" fill="#81C784"/>
+                            <rect x="25" y="45" width="30" height="5" fill="#81C784"/>
+                            <rect x="25" y="55" width="30" height="5" fill="#81C784"/>
+                            <circle cx="40" cy="20" r="9" fill="#FFD700"/>
+                            <path d="M 40 14 L 42 18 L 46 18 L 43 21 L 44 25 L 40 23 L 36 25 L 37 21 L 34 18 L 38 18 Z" fill="#FFF"/>
+                        </svg>
+                        <p>Boas Práticas Agrícolas</p>
+                    </div>
+                    <div class="control-item">
+                        <svg viewBox="0 0 80 80">
+                            <circle cx="40" cy="40" r="25" fill="none" stroke="#4CAF50" stroke-width="4"/>
+                            <circle cx="40" cy="40" r="15" fill="none" stroke="#4CAF50" stroke-width="3"/>
+                            <line x1="40" y1="15" x2="40" y2="25" stroke="#4CAF50" stroke-width="3"/>
+                            <line x1="40" y1="55" x2="40" y2="65" stroke="#4CAF50" stroke-width="3"/>
+                            <line x1="15" y1="40" x2="25" y2="40" stroke="#4CAF50" stroke-width="3"/>
+                            <line x1="55" y1="40" x2="65" y2="40" stroke="#4CAF50" stroke-width="3"/>
+                            <circle cx="40" cy="40" r="5" fill="#4CAF50"/>
+                        </svg>
+                        <p>Monitoramento Constante</p>
+                    </div>
+                    <div class="control-item">
+                        <svg viewBox="0 0 80 80">
+                            <rect x="25" y="20" width="30" height="40" fill="#4CAF50" rx="5"/>
+                            <circle cx="40" cy="35" r="10" fill="#81C784"/>
+                            <rect x="36" y="45" width="8" height="12" fill="#81C784"/>
+                            <text x="40" y="40" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Y</text>
+                            <circle cx="40" cy="35" r="3" fill="#fff" opacity="0.6"/>
+                        </svg>
+                        <p>Uso de Adsorventes (YCWE)</p>
+                    </div>
+                    <div class="control-item
