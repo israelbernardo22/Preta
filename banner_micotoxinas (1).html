@@ -163,8 +163,34 @@
             margin-top: 5px;
         }
 
+        /* Garantir que a imagem de aflatoxina preencha o card */
+        #foto_aflatoxina {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+        }
+
+        /* Mesma regra para a imagem de Fusarium */
+        #foto_fusarium {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+        }
+
+        /* Mesma regra para a imagem de Penicilium */
+        #foto_penicilium {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+        }
         .flowchart {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);  
             padding: 25px;
             border-radius: 12px;
             margin: 25px 0;
@@ -362,7 +388,10 @@
         .impact-box span {
             color: #666;
             font-size: 14px;
+        
         }
+
+        
 
         .objetivo-box {
             background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
@@ -442,45 +471,15 @@
                 <h2>🔬 Principais Fungos Toxigênicos</h2>
                 <div class="image-grid">
                     <div class="image-box">
-                        <svg viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="30" fill="#4a5568" opacity="0.2"/>
-                            <circle cx="50" cy="35" r="15" fill="#2d3748"/>
-                            <circle cx="40" cy="50" r="10" fill="#2d3748"/>
-                            <circle cx="60" cy="50" r="10" fill="#2d3748"/>
-                            <circle cx="50" cy="65" r="12" fill="#2d3748"/>
-                            <line x1="50" y1="20" x2="50" y2="5" stroke="#2d3748" stroke-width="3"/>
-                            <line x1="30" y1="30" x2="20" y2="20" stroke="#2d3748" stroke-width="3"/>
-                            <line x1="70" y1="30" x2="80" y2="20" stroke="#2d3748" stroke-width="3"/>
-                            <circle cx="50" cy="35" r="3" fill="#fff" opacity="0.5"/>
-                        </svg>
+                        <img src="https://www.btaaditivos.com.br/images/imagem-blog-aspergillus.jpg" alt="Não foi" id="foto_aflatoxina">
                         <p>Aspergillus<br><span style="font-size: 11px; font-weight: normal; color: #666;">Produz aflatoxinas</span></p>
                     </div>
                     <div class="image-box">
-                        <svg viewBox="0 0 100 100">
-                            <ellipse cx="50" cy="50" rx="35" ry="20" fill="#8b4513" opacity="0.2"/>
-                            <path d="M 30 50 Q 40 30 50 50 T 70 50" fill="none" stroke="#654321" stroke-width="4"/>
-                            <circle cx="35" cy="45" r="5" fill="#654321"/>
-                            <circle cx="50" cy="35" r="6" fill="#654321"/>
-                            <circle cx="65" cy="45" r="5" fill="#654321"/>
-                            <line x1="35" y1="50" x2="35" y2="65" stroke="#654321" stroke-width="2"/>
-                            <line x1="50" y1="50" x2="50" y2="70" stroke="#654321" stroke-width="2"/>
-                            <line x1="65" y1="50" x2="65" y2="65" stroke="#654321" stroke-width="2"/>
-                            <circle cx="50" cy="35" r="2" fill="#fff" opacity="0.6"/>
-                        </svg>
+                        <img src="https://www.koppert.com.br/content/_processed_/3/1/csm_basal_rot_fusarium_oxysporum_koppert_31059ed212.jpg" alt="não foi" id="foto_fusarium">
                         <p>Fusarium<br><span style="font-size: 11px; font-weight: normal; color: #666;">Produz fumonisinas</span></p>
                     </div>
                     <div class="image-box">
-                        <svg viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="30" fill="#2c5f2d" opacity="0.2"/>
-                            <circle cx="50" cy="40" r="12" fill="#1a3d1a"/>
-                            <circle cx="35" cy="55" r="10" fill="#1a3d1a"/>
-                            <circle cx="65" cy="55" r="10" fill="#1a3d1a"/>
-                            <circle cx="50" cy="65" r="8" fill="#1a3d1a"/>
-                            <line x1="50" y1="28" x2="50" y2="15" stroke="#1a3d1a" stroke-width="2"/>
-                            <line x1="25" y1="50" x2="15" y2="45" stroke="#1a3d1a" stroke-width="2"/>
-                            <line x1="75" y1="50" x2="85" y2="45" stroke="#1a3d1a" stroke-width="2"/>
-                            <circle cx="50" cy="40" r="3" fill="#fff" opacity="0.5"/>
-                        </svg>
+                        <img src="https://s2-umsoplaneta.glbimg.com/lAcJ6eSEDiixEIXGjUbDWUYjjTc=/0x0:1200x630/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_7d5b9b5029304d27b7ef8a7f28b4d70f/internal_photos/bs/2022/I/o/B06NKgQGCGzaXcJCcPyg/02062022-fungo-penicillium-echinulatum.jpg" alt="não foi" id="foto_penicilium">
                         <p>Penicillium<br><span style="font-size: 11px; font-weight: normal; color: #666;">Produz múltiplas toxinas</span></p>
                     </div>
                 </div>
@@ -594,21 +593,6 @@
             </div>
 
             <div class="section">
-                <h2>🛡️ Estratégias de Controle e Prevenção</h2>
-                <div class="controls-grid">
-                    <div class="control-item">
-                        <svg viewBox="0 0 80 80">
-                            <circle cx="40" cy="40" r="23" fill="none" stroke="#4CAF50" stroke-width="3"/>
-                            <path d="M 28 40 L 36 48 L 54 30" fill="none" stroke="#4CAF50" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="40" cy="20" r="4" fill="#4CAF50"/>
-                            <circle cx="40" cy="60" r="4" fill="#4CAF50"/>
-                        </svg>
-                        <p>Diagnóstico Precoce</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
                 <h2>💡 Considerações Finais</h2>
                 <p>A contaminação por micotoxinas na silagem de milho representa um <strong>desafio contínuo e multifacetado</strong> para a pecuária leiteira, com impactos diretos e significativos sobre a saúde hepática e a produtividade dos bovinos. O controle eficaz requer uma <strong>abordagem integrada</strong> que combine boas práticas agrícolas, monitoramento rigoroso e uso criterioso de adsorventes. A prevenção dessas contaminações é <strong>essencial</strong> para reduzir perdas produtivas e proteger a saúde pública, reforçando a importância da vigilância sanitária dentro do conceito de <strong>Saúde Única</strong>.</p>
                 
@@ -633,37 +617,3 @@
         </div>
     </div>
 </body>
-</html">
-                        <svg viewBox="0 0 80 80">
-                            <rect x="20" y="30" width="40" height="35" fill="#4CAF50" rx="3"/>
-                            <rect x="25" y="35" width="30" height="5" fill="#81C784"/>
-                            <rect x="25" y="45" width="30" height="5" fill="#81C784"/>
-                            <rect x="25" y="55" width="30" height="5" fill="#81C784"/>
-                            <circle cx="40" cy="20" r="9" fill="#FFD700"/>
-                            <path d="M 40 14 L 42 18 L 46 18 L 43 21 L 44 25 L 40 23 L 36 25 L 37 21 L 34 18 L 38 18 Z" fill="#FFF"/>
-                        </svg>
-                        <p>Boas Práticas Agrícolas</p>
-                    </div>
-                    <div class="control-item">
-                        <svg viewBox="0 0 80 80">
-                            <circle cx="40" cy="40" r="25" fill="none" stroke="#4CAF50" stroke-width="4"/>
-                            <circle cx="40" cy="40" r="15" fill="none" stroke="#4CAF50" stroke-width="3"/>
-                            <line x1="40" y1="15" x2="40" y2="25" stroke="#4CAF50" stroke-width="3"/>
-                            <line x1="40" y1="55" x2="40" y2="65" stroke="#4CAF50" stroke-width="3"/>
-                            <line x1="15" y1="40" x2="25" y2="40" stroke="#4CAF50" stroke-width="3"/>
-                            <line x1="55" y1="40" x2="65" y2="40" stroke="#4CAF50" stroke-width="3"/>
-                            <circle cx="40" cy="40" r="5" fill="#4CAF50"/>
-                        </svg>
-                        <p>Monitoramento Constante</p>
-                    </div>
-                    <div class="control-item">
-                        <svg viewBox="0 0 80 80">
-                            <rect x="25" y="20" width="30" height="40" fill="#4CAF50" rx="5"/>
-                            <circle cx="40" cy="35" r="10" fill="#81C784"/>
-                            <rect x="36" y="45" width="8" height="12" fill="#81C784"/>
-                            <text x="40" y="40" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Y</text>
-                            <circle cx="40" cy="35" r="3" fill="#fff" opacity="0.6"/>
-                        </svg>
-                        <p>Uso de Adsorventes (YCWE)</p>
-                    </div>
-                    <div class="control-item
